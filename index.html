@@ -51,8 +51,11 @@
           <a class="nav-link" href="#Fonts">Fonts</a>
         </li>
         <li>
-          <a class="nav-link" href="#Reference">Reference</a>
+          <a class="nav-link" href="#Layout">Text layout</a>
         </li>
+        <li>
+          <a class="nav-link" href="#Reference">Reference</a>
+        </li>  
       </ul>
     </nav>
     <main id="main-doc">
@@ -421,36 +424,100 @@
           </p>
         </article>
       </section>
-
-
       <section class="main-section" id="Padding">
         <header>Padding</header>
         <article>
           <p>
-            For example, the following code defines a simple function named
-            square:
+            The padding sits between the border and the content area. Unlike margins you cannot have negative amounts of padding, so the value must be 0 or a positive value. Any background applied to your element will display behind the padding, and it is typically used to push the content away from the border.
           </p>
           <p>
-            Primitive parameters (such as a number) are passed to functions by
-            value; the value is passed to the function, but if the function
-            changes the value of the parameter, this change is not reflected
-            globally or in the calling function.
+            We can control the padding on each side of an element individually using the padding property, or each side individually using the equivalent longhand properties:
+            <ul>
+              <li>padding-top</li>
+              <li>padding-right</li>
+              <li>padding-bottom</li>
+              <li>padding-left</li>
+            </ul>
           </p>
         </article>
       </section>
-
-
       <section class="main-section" id="Fonts">
         <header>Fonts</header>
         <article>
-          <p>
-            You may also compound the statements using else if to have multiple
-            conditions tested in sequence, as follows:
+          <p><strong>Font styles: </strong> Properties that affect the font that is applied to the text, affecting what font is applied, how big it is, whether it is bold, italic, etc.</li>
           </p>
+          <p><strong>Font families: </strong>To set a different font on your text, you use the font-family property — this allows you to specify a font (or list of fonts) for the browser to apply to the selected elements. The browser will only apply a font if it is available on the machine the website is being accessed on; if not, it will just use a browser default font. </p>
+          <p><strong>Web safe fonts: </strong>Speaking of font availability, there are only a certain number of fonts that are generally available across all systems and can therefore be used without much worry. Most of the time, as web developers we want to have more specific control over the fonts used to display our text content. The problem is to find a way to know which font is available on the computer used to see our web pages. There is no way to know this in every case, but the web safe fonts are known to be available on nearly all instances of the most used operating systems (Windows, macOS, the most common Linux distributions, Android, and iOS). Some web safe fonts:
+          <ul>
+            <li>Arial</li>
+            <li>Courier New</li>
+            <li>Georgia</li>
+            <li>Times New Roman</li>
+            <li>Trebuchet MS</li>
+            <li>Verdana</li>
+          </ul></p>
+          <p>
+            <strong>Default fonts: </strong> CSS defines five generic names for fonts:  serif, sans-serif, monospace, cursive and fantasy. Those are very generic and the exact font face used when using those generic names is up to each browser and can vary for each operating system they are running on. It represents a worst case scenario where the browser will try to do its best to provide at least a font that looks appropriate. serif, sans-serif and monospace are quite predictable and should provide something reasonable. On the other hand, cursive and fantasy are less predictable and we recommend using them very carefully, testing as you go. The five names are defined as follows:
+            <ul>
+              <li><strong>serif: </strong>fonts that have serifs (the flourishes and other small details you see at the ends of the strokes in some typefaces)</li>
+              <li><strong>sans-serif: </strong>fonts that don't have serifs.</li>
+              <li><strong>monospace: </strong>fonts where every character has the same width, typically used in code listings.</li>
+              <li><strong>cursive: </strong>fonts that are intended to emulate handwriting, with flowing, connected strokes.</li>
+              <li><strong>fantasy: </strong>fonts that are intended to be decorative.</li>
+            </ul>
+          </p>
+          <p><strong>Google Fonts: </strong>If you do not want to use any of the standard fonts in HTML, you can use the Google Fonts API to add hundreds of other fonts to your page. Just add a stylesheet link and refer to a font family of your choice. <a
+            href="https://fonts.google.com/"
+            target="_blank"
+            >Google Fonts</a
+          ></p>
+          <p><strong>Font style: </strong>The font-style property is mostly used to specify italic text. This property has three values:
+          <ul>
+            <li><strong>normal: </strong>text is shown normally.</li>
+            <li><strong>italic: </strong>text is shown in italics.</li>
+            <li><strong>oblique: </strong>text is "leaning" (oblique is very similar to italic, but less supported).</li>
+          </ul></p>
+          <p><strong>Font weight: </strong>sets how bold the text is. This has many values available in case you have many font variants available, but realistically you'll rarely use any of them except for normal and bold. Values include:
+          <ul>
+            <li><strong>normal, bold: </strong>normal and bold font weight.</li>
+            <li><strong>lighter, bolder: </strong>sets the current element's boldness to be one step lighter or heavier than its parent element's boldness.</li>
+            <li><strong>100-900: </strong>numeric boldness values that provide finer grained control than the above keywords, if needed.</li>
+          </ul></p>
+          <p><strong>text-transform: </strong>allows you to set your font to be transformed. Values include:
+          <ul>
+            <li><strong>none: </strong>prevents any transformation.</li>
+            <li><strong>uppercase: </strong>transforms ALL TEXT TO CAPITALS.</li>
+            <li><strong>lowercase: </strong>transforms all text to lower case.</li>
+            <li><strong>capitalize: </strong>transforms all words to Have The First Letter Capitalized.</li>
+            <li><strong>full-width: </strong>transforms all glyphs to be written inside a fixed-width square, similar to a monospace font, allowing aligning of e.g. Latin characters along with Asian language glyphs (like Chinese, Japanese, Korean).</li>
+          </ul></p>
+          <p><strong>text-decoration: </strong>sets/unsets text decorations on fonts (you'll mainly use this to unset the default underline on links when styling them.) Available values are:
+          <ul>
+            <li><strong>none: </strong>unsets any text decorations already present.</li>
+            <li><strong>underline: </strong>underlines the text.</li>
+            <li><strong>overline: </strong>gives the text an overline.</li>
+            <li><strong>line-through: </strong>puts a strikethrough over the text.</li>
+          </ul></p>
         </article>
       </section>
-
-
+      <section class="main-section" id="Layout">
+        <header>Text layout</header>
+        <article>
+          <p>
+            <strong>Text layout styles: </strong>properties that affect the spacing and other layout features of the text, allowing manipulation of, for example, the space between lines and letters, and how the text is aligned within the content box.
+          </p>
+          <p>
+            <strong>text-align: </strong>is used to control how text is aligned within its containing content box. The available values are as follows, and work in pretty much the same way as they do in a regular word processor application:<ul>
+              <li><strong>left: </strong>left-justifies the text.</li>
+              <li><strong>right: </strong>right-justifies the text.</li>
+              <li><strong>center: </strong>centers the text.</li>
+              <li><strong>justify: </strong>makes the text spread out, varying the gaps in between the words so that all lines of text are the same width.</li>
+            </ul>
+          </p>
+          <p><strong>line-height: </strong>sets the height of each line of text — this can take most length and size units, but can also take a unitless value, which acts as a multiplier and is generally considered the best option — the font-size is multiplied to get the line-height. Body text generally looks nicer and is easier to read when the lines are spaced apart; the recommended line height is around 1.5 – 2 (double spaced.).</p>
+          <p><strong>letter-spacing</strong> and <strong>word-spacing: </strong>allow you to set the spacing between letters and words in your text. You won't use these very often, but might find a use for them to get a certain look, or to improve the legibility of a particularly dense font. They can take most length and size units.</p>
+        </article>
+      </section>
       <section class="main-section" id="Reference">
         <header>Reference</header>
         <article>
