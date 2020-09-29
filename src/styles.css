@@ -31,7 +31,7 @@ strong {
   color: #083d77;
 }
 
-#main-doc header {
+#main header {
   text-align: left;
   margin: 0px;
 }
@@ -59,7 +59,7 @@ strong {
   cursor: pointer;
 }
 
-#main-doc {
+#main {
   position: absolute;
   margin-left: 310px;
   padding: 20px;
@@ -127,7 +127,7 @@ code {
     color: #004ba8;
   }
 
-  #main-doc {
+  #main {
     position: relative;
     margin-left: 0px;
     margin-top: 270px;
@@ -135,7 +135,7 @@ code {
 }
 
 @media only screen and (max-width: 400px) {
-  #main-doc {
+  #main {
     margin-left: -10px;
   }
 
