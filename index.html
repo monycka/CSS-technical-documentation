@@ -12,23 +12,19 @@
       <ul>
         <li><a class="nav-link" href="#Introduction">Introduction</a></li>
         <li>
-          <a class="nav-link" href="#What_you_should_already_know"
-            >What you should already know</a
-          >
+          <a class="nav-link" href="#Basics">What you should already know</a>
         </li>
         <li>
-          <a class="nav-link" href="#Adding_CSS">Adding CSS to the document</a>
+          <a class="nav-link" href="#Adding">Adding CSS to the document</a>
         </li>
         <li>
-          <a class="nav-link" href="#Anatomy_ruleset"
-            >Anatomy of a CSS ruleset</a
-          >
+          <a class="nav-link" href="#Anatomy">Anatomy of a CSS ruleset</a>
         </li>
         <li>
           <a class="nav-link" href="#Declarations">Multiple declarations</a>
         </li>
         <li>
-          <a class="nav-link" href="#Parts_syntax">Part of the Syntax</a>
+          <a class="nav-link" href="#Syntax">Part of the Syntax</a>
         </li>
         <li>
           <a class="nav-link" href="#Selectors">Selectors</a>
@@ -36,20 +32,24 @@
         <li>
           <a class="nav-link" href="#Rules">@rules</a>
         </li>
-        <li><a class="nav-link" href="#Colors">Colors</a></li>
-        <li><a class="nav-link" href="#Fonts">Fonts</a></li>
         <li>
-          <a class="nav-link" href="#if...else_statement"
-            >if...else statement</a
-          >
-        </li>
-        <li><a class="nav-link" href="#while_statement">while statement</a></li>
+          <a class="nav-link" href="#Colors">Colors</a></li>
         <li>
-          <a class="nav-link" href="#Function_declarations"
-            >Function declarations</a
-          >
+          <a class="nav-link" href="#Background">Background properties</a></li>
+        <li>
+          <a class="nav-link" href="#Borders">Borders</a></li>
+        <li>
+          <a class="nav-link" href="#Margins">Margins</a>
         </li>
-        <li><a class="nav-link" href="#Reference">Reference</a></li>
+        <li>
+          <a class="nav-link" href="#Padding">Padding</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Fonts">Fonts</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Reference">Reference</a>
+        </li>
       </ul>
     </nav>
     <main id="main-doc">
@@ -79,7 +79,7 @@
           </p>
         </article>
       </section>
-      <section class="main-section" id="What_you_should_already_know">
+      <section class="main-section" id="Basics">
         <header>What you should already know</header>
         <article>
           <p>This guide assumes you have the following basic background:</p>
@@ -93,7 +93,7 @@
           </ul>
         </article>
       </section>
-      <section class="main-section" id="Adding_CSS">
+      <section class="main-section" id="Adding">
         <header>Adding CSS to the document</header>
         <article>
           <p>
@@ -123,7 +123,7 @@
           </p>
         </article>
       </section>
-      <section class="main-section" id="Anatomy_ruleset">
+      <section class="main-section" id="Anatomy">
         <header>Anatomy of a CSS ruleset</header>
         <article>
           <div id="img-div">
@@ -203,7 +203,7 @@
           </div>
         </article>
       </section>
-      <section class="main-section" id="Parts_syntax">
+      <section class="main-section" id="Syntax">
         <header>Parts of the syntax</header>
         <ul>
           <li>
@@ -277,21 +277,14 @@
             <li>
               In HTML, media queries can be applied to various elements:
               <ul>
-                <li>In the < link > element's media attribute, they define the media to which a linked resource (typically CSS) should be applied.</li>
-                <li>In the < source > element's media attribute, they define the media to which that source should be applied. (This is only valid inside < picture > elements.)</li>
-                <li>In the < style > element's media attribute, they define the media to which the style should be applied.</li>
+                <li>In the "link" element's media attribute, they define the media to which a linked resource (typically CSS) should be applied.</li>
+                <li>In the "source" element's media attribute, they define the media to which that source should be applied. (This is only valid inside < picture > elements.)</li>
+                <li>In the "style" element's media attribute, they define the media to which the style should be applied. </li>
               </ul>
             </li>
           </ul>
         </article>
       </section>
-      
-
-
-
-
-
-
       <section class="main-section" id="Colors">
         <header>Colors</header>
         <article>
@@ -302,68 +295,51 @@
             <strong>Predefined color names: </strong>
             In CSS, a color can be specified by using a color name. For example:
             <ul>
-              <li>Tomato</li>
-              <li>Gray</li>
-              <li>Orange</li>
-              <li>SlateBlue</li>
-              <li>Violet</li>
+              <li>Tomato, Gray, Orange, SlateBlue, Violet, MediumSeaGreen, ...</li>
+              <li>CSS/HTML support <a href="https://www.w3schools.com/css/css_colors.asp">140 standard color names</a>.
             </ul>
-            CSS/HTML support <a href="https://www.w3schools.com/css/css_colors.asp">140 standard color names</a>.
           </p>
-          <p><strong>RGB value: </strong>A color can be specified as an RGB value, using this formula: rgb(red, green, blue)
-            <br />
-            Each parameter (red, green, and blue) defines the intensity of the color between 0 and 255. For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255) and the others are set to 0. To display black, set all color parameters to 0, like this: rgb(0, 0, 0). To display white, set all color parameters to 255, like this: rgb(255, 255, 255).</p>
-            <p><strong>RGBA Value: </strong>They are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. An RGBA color value is specified with: rgba(red, green, blue, alpha)
-              <br />
-              The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all)</p>
-            <p></p>
+          <p><strong>RGB Value: </strong>A color can be specified as an RGB value, using this formula: rgb(red, green, blue). Each parameter (red, green, and blue) defines the intensity of the color between 0 and 255. For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255) and the others are set to 0. To display black, set all color parameters to 0, like this: rgb(0, 0, 0). To display white, set all color parameters to 255, like this: rgb(255, 255, 255).</p>
+            <p><strong>RGBA Value: </strong>They are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. An RGBA color value is specified with: rgba(red, green, blue, alpha) The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all).</p>
+            <p><strong>HEX Value: </strong> In CSS, a color can be specified using a hexadecimal value in the form: #rrggbb. Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255). For example, #ff0000 is displayed as red, because red is set to its highest value (ff) and the others are set to the lowest value (00).
+          </p>
+          <p><strong>HSL Value: </strong>A color can be specified using hue, saturation, and lightness (HSL) in the form: hsl(hue, saturation, lightness). Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue. Saturation is a percentage value, 0% means a shade of gray, and 100% is the full color. Lightness is also a percentage, 0% is black, 50% is neither light or dark, 100% is white.</p>
+          <p><strong>HSLA Value: </strong> An extension of HSL color values with an alpha channel - which specifies the opacity for a color. An HSLA color value is specified with: hsla(hue, saturation, lightness, alpha). The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all).</p>
         </article>
       </section>
+      <section class="main-section" id="Background">
+        <header>Background properties</header>
+        <article>
+          <p>The CSS background property is a shorthand for a number of background longhand properties. If you discover a complex background property in a stylesheet, it might seem a little hard to understand as so many values can be passed in at once.</p>
+          <p>The background-color property defines the background color on any element in CSS. The property accepts any valid < color >. A background-color extends underneath the content and padding box of the element.</p>
+          <p>The background-image property enables the display of an image in the background of an element.</p>
+          <p>A gradient — when used for a background — acts just like an image and is also set by using the background-image property. The < gradient > CSS data type is a special type of < image > that consists of a progressive transition between two or more colors. </p>
+          <p>It is also possible to have multiple background images — you specify multiple background-image values in a single property value, separating each one with a comma. When you do this you may end up with background images overlapping each other. The backgrounds will layer with the last listed background image at the bottom of the stack, and each previous image stacking on top of the one that follows it in the code.</p>
+          <p></p>
+        </article>
+      </section>
+      
       
 
-      <section class="main-section" id="Data_types">
-        <header>Data types</header>
-        <article>
-          <p>The latest ECMAScript standard defines seven data types:</p>
-        </article>
-      </section>
-      
-      
-      <section class="main-section" id="if...else_statement">
-        <header>if...else statement</header>
-        <article>
-          <p>
-            You may also compound the statements using else if to have multiple
-            conditions tested in sequence, as follows:
-          </p>
-        </article>
-      </section>
-     
-     
-      <section class="main-section" id="while_statement">
-        <header>while statement</header>
-        <article>
-          <p>
-            The condition test occurs before statement in the loop is executed.
-            If the condition returns true, statement is executed and the
-            condition is tested again. If the condition returns false, execution
-            stops and control is passed to the statement following while.
-          </p>
 
-          <p>
-            To execute multiple statements, use a block statement ({ ... }) to
-            group those statements.
-          </p>
-          <p>
-            With each iteration, the loop increments n and adds that value to x.
-            Therefore, x and n take on the following values:
-          </p>
+
+     
+     
+      <section class="main-section" id="Borders">
+        <header>Borders</header>
+        <article>
+          <p>The border shorthand CSS property sets an element's border. This property is a shorthand for the following CSS properties:</p>
+          <ul>
+            <li><strong>border-color: </strong>sets the color of an element's border. Each side can be set individually.</li>
+            <li><strong>border-style: </strong>sets the line style for all four sides of an element's border.</li>
+            <li><strong>border-width: </strong>sets the width of an element's border.</li>
+          </ul>
         </article>
       </section>
       
       
-      <section class="main-section" id="Function_declarations">
-        <header>Function declarations</header>
+      <section class="main-section" id="Margins">
+        <header>Margins</header>
         <article>
           <p>
             For example, the following code defines a simple function named
@@ -377,7 +353,36 @@
           </p>
         </article>
       </section>
-      
+
+
+      <section class="main-section" id="Padding">
+        <header>Padding</header>
+        <article>
+          <p>
+            For example, the following code defines a simple function named
+            square:
+          </p>
+          <p>
+            Primitive parameters (such as a number) are passed to functions by
+            value; the value is passed to the function, but if the function
+            changes the value of the parameter, this change is not reflected
+            globally or in the calling function.
+          </p>
+        </article>
+      </section>
+
+
+      <section class="main-section" id="Fonts">
+        <header>Fonts</header>
+        <article>
+          <p>
+            You may also compound the statements using else if to have multiple
+            conditions tested in sequence, as follows:
+          </p>
+        </article>
+      </section>
+
+
       <section class="main-section" id="Reference">
         <header>Reference</header>
         <article>
@@ -385,9 +390,19 @@
             <li>
               All the documentation in this page is taken from
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
                 target="_blank"
                 >MDN</a
+              >, 
+              <a
+                href="https://www.w3schools.com/css/default.asp"
+                target="_blank"
+                >W3 Schools</a
+              >, and 
+              <a
+                href="https://cssworkshop.wordpress.com/2015/03/22/anatomy-of-a-css-declaration/"
+                target="_blank"
+                >CSS Workshop</a
               >
             </li>
           </ul>
