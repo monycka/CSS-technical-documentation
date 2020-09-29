@@ -17,31 +17,27 @@
           >
         </li>
         <li>
-          <a class="nav-link" href="#Adding_CSS_to_the_document"
-            >Adding CSS to the document</a
-          >
+          <a class="nav-link" href="#Adding_CSS">Adding CSS to the document</a>
         </li>
         <li>
-          <a class="nav-link" href="#Anatomy_of_a_CSS_ruleset"
+          <a class="nav-link" href="#Anatomy_ruleset"
             >Anatomy of a CSS ruleset</a
           >
         </li>
         <li>
-          <a class="nav-link" href="#Parts_of_the_syntax">Part of the Syntax</a>
+          <a class="nav-link" href="#Declarations">Multiple declarations</a>
         </li>
         <li>
-          <a class="nav-link" href="#Multiple_selectors">Multiple selectors</a>
+          <a class="nav-link" href="#Parts_syntax">Part of the Syntax</a>
         </li>
         <li>
-          <a class="nav-link" href="#Multiple_declarations"
-            >Multiple declarations</a
-          >
+          <a class="nav-link" href="#Selectors">Selectors</a>
         </li>
         <li>
-          <a class="nav-link" href="#Global_variables">Global variables</a>
+          <a class="nav-link" href="#Rules">@rules</a>
         </li>
-        <li><a class="nav-link" href="#Constants">Constants</a></li>
-        <li><a class="nav-link" href="#Data_types">Data types</a></li>
+        <li><a class="nav-link" href="#Colors">Colors</a></li>
+        <li><a class="nav-link" href="#Fonts">Fonts</a></li>
         <li>
           <a class="nav-link" href="#if...else_statement"
             >if...else statement</a
@@ -97,7 +93,7 @@
           </ul>
         </article>
       </section>
-      <section class="main-section" id="Adding_CSS_to_the_document">
+      <section class="main-section" id="Adding_CSS">
         <header>Adding CSS to the document</header>
         <article>
           <p>
@@ -127,7 +123,7 @@
           </p>
         </article>
       </section>
-      <section class="main-section" id="Anatomy_of_a_CSS_ruleset">
+      <section class="main-section" id="Anatomy_ruleset">
         <header>Anatomy of a CSS ruleset</header>
         <article>
           <div id="img-div">
@@ -179,7 +175,35 @@
           </ul>
         </article>
       </section>
-      <section class="main-section" id="Parts_of_the_syntax">
+      <section class="main-section" id="Declarations">
+        <header>Multiple declarations</header>
+        <article>
+          <p>Declarations are style rules that add styling to HTML elements.</p>
+          <p>
+            By making our anchor tag white we have already demonstrated that we
+            can target and style an HTML element. We do this by targeting an
+            element selector — this is a selector that directly matches an HTML
+            element name. To target all paragraphs in the document you would use
+            the selector "p".
+          </p>
+          <p>
+            You can target multiple selectors at once, by separating the
+            selectors with a comma.
+          </p>
+          <div id="img-div">
+            <img
+              src="https://cssworkshop.files.wordpress.com/2015/03/css-declarations-rev1.png"
+              alt="Declaration blocks with multiple declarations (top) and multiple selectors / declarations (bottom)."
+              id="image"
+            />
+            <figcaption id="img-caption">
+              Declaration blocks with multiple declarations (top) and multiple
+              selectors / declarations (bottom).
+            </figcaption>
+          </div>
+        </article>
+      </section>
+      <section class="main-section" id="Parts_syntax">
         <header>Parts of the syntax</header>
         <ul>
           <li>
@@ -200,71 +224,44 @@
           </li>
         </ul>
       </section>
-
-      <section class="main-section" id="Multiple_selectors">
-        <header>Multiple selectors</header>
+      <section class="main-section" id="Selectors">
+        <header>Selectors</header>
         <article>
           <p>
-            By making our heading red we have already demonstrated that we can
-            target and style an HTML element. We do this by targeting an element
-            selector — this is a selector that directly matches an HTML element
-            name. To target all paragraphs in the document you would use the
-            selector "p".
+            A selector targets HTML to apply styles to content. If CSS is not
+            applying to content as expected, your selector may not match the way
+            you think it should match. Each CSS rule starts with a selector — or
+            a list of selectors — in order to tell the browser which element or
+            elements the rules should apply to.
           </p>
-
           <p>
-            You can target multiple selectors at once, by separating the
-            selectors with a comma.
+            There are many different types of selectors. We can make more
+            specific selections as well. Here are some of the more common types
+            of selectors:
           </p>
-          <div id="img-div">
-            <img
-              src="https://cssworkshop.files.wordpress.com/2015/03/css-declarations-rev1.png"
-              alt="Declaration blocks with multiple declarations (top) and multiple selectors / declarations (bottom)."
-              id="image"
-            />
-            <figcaption id="img-caption">Declaration blocks with multiple declarations (top) and multiple selectors / declarations (bottom).</figcaption>
-          </div>
+          <ul>
+            <li>
+              <strong>Element selector: </strong>Sometimes called a tag or type
+              selector. It selects all HTML elements of the specified type. For example:
+              <code>p selects < p > </p></code>
+            </li>
+            <li><strong>ID selector: </strong>It selects the element on the page with the specified ID. On a given HTML page, each id value should be unique. For example:<code> #my-id
+              selects < p id="my-id" > or < a id="my-id" > </code></li>
+            <li><strong>Class selector: </strong>It selects the element(s) on the page with the specified class. Multiple instances of the same class can appear on a page. For example:<code>.my-class
+              selects < p class="my-class" > and < a class="my-class" > </code></li>
+            <li><strong>Attribute selector: </strong>It selects the element(s) on the page with the specified attribute. For example:<code>img[src]
+              selects < img src="myimage.png" > but not < img > </code></li>
+            <li><strong>Pseudo-class selector: </strong>It selects the specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.) For example:<code>a:hover
+              selects < a >, but only when the mouse pointer is hovering over the link.</code></li>
+              <li><strong>Combinators: </strong>It combines other selectors in order to target elements within our documents. For example:<code> article > p { } selects paragraphs that are direct children of < article > elements using the child combinator (>)</code></li>
+          </ul>
         </article>
       </section>
 
-      <section class="main-section" id="Hello_world">
-        <header>Hello world</header>
-        <article>
-          To get started with writing JavaScript, open the Scratchpad and write
-          your first "Hello world" JavaScript code:
-          <code
-            >function greetMe(yourName) { alert("Hello " + yourName); }
-            greetMe("World");
-          </code>
 
-          Select the code in the pad and hit Ctrl+R to watch it unfold in your
-          browser!
-        </article>
-      </section>
 
-      <section class="main-section" id="Multiple_declarations">
-        <header>Multiple declarations</header>
-        <article>
-          You can declare a variable in three ways:
-          <p>
-            With the keyword var. For example, <code>var x = 42.</code> This
-            syntax can be used to declare both local and global variables.
-          </p>
-          <p>
-            By simply assigning it a value. For example,
-            <code>x = 42.</code> This always declares a global variable. It
-            generates a strict JavaScript warning. You shouldn't use this
-            variant.
-          </p>
-          <p>
-            With the keyword let. For example,<code> let y = 13.</code> This
-            syntax can be used to declare a block scope local variable. See
-            Variable scope below.
-          </p>
-        </article>
-      </section>
-      <section class="main-section" id="Global_variables">
-        <header>Global variables</header>
+      <section class="main-section" id="Rules">
+        <header>Adding comments</header>
         <article>
           <p>
             Global variables are in fact properties of the global object. In web
