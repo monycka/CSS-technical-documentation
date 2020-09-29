@@ -33,13 +33,16 @@
           <a class="nav-link" href="#Rules">@rules</a>
         </li>
         <li>
+          <a class="nav-link" href="#Box">The box model</a>
+        </li>
+        <li>
           <a class="nav-link" href="#Colors">Colors</a></li>
         <li>
           <a class="nav-link" href="#Background">Background properties</a></li>
         <li>
-          <a class="nav-link" href="#Borders">Borders</a></li>
+          <a class="nav-link" href="#Border">Border</a></li>
         <li>
-          <a class="nav-link" href="#Margins">Margins</a>
+          <a class="nav-link" href="#Margin">Margin</a>
         </li>
         <li>
           <a class="nav-link" href="#Padding">Padding</a>
@@ -133,7 +136,7 @@
               id="image"
             />
             <figcaption id="img-caption">
-              Anatomy of a CSS Declaration Block.
+              Anatomy of a CSS Declaration Block
             </figcaption>
           </div>
           <p>
@@ -144,7 +147,7 @@
           <ul>
             <li>
               <strong>Selector: </strong>This is the HTML element that we’re
-              targeting. It can be an HTML tag, or it can be an ID or a Class
+              targeting. It can be an HTML tag, an ID or a Class
               (more about those later). The selector in this example is the
               anchor tag.
             </li>
@@ -193,12 +196,12 @@
           <div id="img-div">
             <img
               src="https://cssworkshop.files.wordpress.com/2015/03/css-declarations-rev1.png"
-              alt="Declaration blocks with multiple declarations (top) and multiple selectors / declarations (bottom)."
+              alt="Declaration blocks with multiple declarations (top) and multiple selectors / declarations (bottom)"
               id="image"
             />
             <figcaption id="img-caption">
               Declaration blocks with multiple declarations (top) and multiple
-              selectors / declarations (bottom).
+              selectors / declarations (bottom)
             </figcaption>
           </div>
         </article>
@@ -285,6 +288,58 @@
           </ul>
         </article>
       </section>
+      <section class="main-section" id="Box">
+        <header>The box model</header>
+        <article>
+          <p>Everything in CSS has a box around it, and understanding these boxes is key to being able to create layouts with CSS, or to align items with other items. We will take a proper look at the CSS Box Model so that you can build more complex layout tasks with an understanding of how it works and the terminology that relates to it.</p>
+          <p>
+            In CSS we broadly have two types of boxes — block boxes and inline boxes. These characteristics refer to how the box behaves in terms of page flow, and in relation to other boxes on the page:
+          </p>
+          <ul>
+            <li>If a box is defined as a block, it will behave in the following ways:
+              <ul>
+                <li>The box will break onto a new line.</li>
+                <li>The box will extend in the inline direction to fill the space available in its container. In most cases this means that the box will become as wide as its container, filling up 100% of the space available.</li>
+                <li>The width and height properties are respected.</li>
+                <li>Padding, margin and border will cause other elements to be pushed away from the box.</li>
+              </ul>
+            </li>
+            <li>Unless we decide to change the display type to inline, elements such as headings (e.g. < h1 >) and < p > all use block as their outer display type by default.</li>
+            <li>If a box has an outer display type of inline, then:
+              <ul>
+                <li>The box will not break onto a new line.</li>
+                <li>The width and height properties will not apply.</li>
+                <li>Vertical padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.</li>
+                <li>Horizontal padding, margins, and borders will apply and will cause other inline boxes to move away from the box.</li>
+              </ul>
+            </li>
+            <li>The < a > element, used for links, < span >, < em > and < strong > are all examples of elements that will display inline by default.</li>
+            <li>The type of box applied to an element is defined by display property values such as block and inline, and relates to the outer value of display.</li>
+          </ul>
+          <p>
+            The full CSS box model applies to block boxes, inline boxes only use some of the behavior defined in the box model. The model defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on the page. To add some additional complexity, there is a standard and an alternate box model.
+          </p>
+          <p>
+            Parts of a box:
+            <ul>
+              <li><strong>Content box: </strong>the area where your content is displayed, which can be sized using properties like width and height.</li>
+              <li><strong>Padding box: </strong>sits around the content as white space; its size can be controlled using padding and related properties.</li>
+              <li><strong>Border box: </strong>wraps the content and any padding. Its size and style can be controlled using border and related properties.</li>
+              <li><strong>Margin box: </strong>is the outermost layer, wrapping the content, padding and border as whitespace between this box and other elements. Its size can be controlled using margin and related properties.</li>
+            </ul>
+          </p>
+          <div id="img-div">
+            <img
+              src="https://mdn.mozillademos.org/files/16558/box-model.png"
+              alt="Parts of a box"
+              id="image"
+            />
+            <figcaption id="img-caption">
+              Parts of a box
+            </figcaption>
+          </div>
+        </article>
+      </section>
       <section class="main-section" id="Colors">
         <header>Colors</header>
         <article>
@@ -310,46 +365,59 @@
       <section class="main-section" id="Background">
         <header>Background properties</header>
         <article>
-          <p>The CSS background property is a shorthand for a number of background longhand properties. If you discover a complex background property in a stylesheet, it might seem a little hard to understand as so many values can be passed in at once.</p>
-          <p>The background-color property defines the background color on any element in CSS. The property accepts any valid < color >. A background-color extends underneath the content and padding box of the element.</p>
-          <p>The background-image property enables the display of an image in the background of an element.</p>
-          <p>A gradient — when used for a background — acts just like an image and is also set by using the background-image property. The < gradient > CSS data type is a special type of < image > that consists of a progressive transition between two or more colors. </p>
-          <p>It is also possible to have multiple background images — you specify multiple background-image values in a single property value, separating each one with a comma. When you do this you may end up with background images overlapping each other. The backgrounds will layer with the last listed background image at the bottom of the stack, and each previous image stacking on top of the one that follows it in the code.</p>
-          <p></p>
+          <p>The CSS background property is a shorthand for a number of background longhand properties. If you discover a complex background property in a stylesheet, it might seem a little hard to understand as so many values can be passed in at once. Here are some individual background properties:</p>
+          <ul>
+            <li><strong>background-color: </strong> defines the background color on any element in CSS. The property accepts any valid < color >. A background-color extends underneath the content and padding box of the element.
+            </li>
+            <li><strong>background-image: </strong> enables the display of an image in the background of an element. It can be combined with:
+              <ul>
+                  <li><strong>gradient: </strong>when used for a background, acts just like an image and is also set by using the background-image property. The < gradient > CSS data type is a special type of < image > that consists of a progressive transition between two or more colors.</li>
+                  <li><strong>multiple background: </strong>It is also possible to have multiple background images — you specify multiple background-image values in a single property value, separating each one with a comma.</li>
+              </ul>
+            </li>
+            <li><strong>background-repeat: </strong>is used to control the tiling behavior of images. The available values are:
+            <ul>
+              <li><strong>no-repeat: </strong>stop the background from repeating altogether.</li>
+              <li><strong>repeat-x: </strong>repeat horizontally.</li>
+              <li><strong>repeat-y: </strong>repeat vertically.</li>
+              <li><strong>repeat: </strong>the default; repeat in both directions.</li>
+            </ul></li>
+            <li><strong>background-size: </strong>which can take length or percentage values, to size the image to fit inside the background.</li>
+            <li><strong>background-position: </strong> allows you to choose the position in which the background image appears on the box it is applied to. This uses a coordinate system in which the top-left-hand corner of the box is (0,0), and the box is positioned along the horizontal (x) and vertical (y) axes.</li>
+            <li><strong>background-attachment: </strong>it specifies how images scroll when the content scrolls.</li>
+          </ul>
         </article>
       </section>
-      
-      
-
-
-
-     
-     
-      <section class="main-section" id="Borders">
-        <header>Borders</header>
+      <section class="main-section" id="Border">
+        <header>Border</header>
         <article>
           <p>The border shorthand CSS property sets an element's border. This property is a shorthand for the following CSS properties:</p>
           <ul>
             <li><strong>border-color: </strong>sets the color of an element's border. Each side can be set individually.</li>
+            <li><strong>border-image: </strong>sets an image to be used as the border around an element.</li>
+            <li><strong>border-radius: </strong> rounds the corners on a box and associated longhands which relate to each corner of the box. Two lengths or percentages may be used as a value, the first value defining the horizontal radius, and the second the vertical radius. In a lot of cases, you will only pass in one value, which will be used for both.</li>
             <li><strong>border-style: </strong>sets the line style for all four sides of an element's border.</li>
             <li><strong>border-width: </strong>sets the width of an element's border.</li>
           </ul>
         </article>
       </section>
-      
-      
-      <section class="main-section" id="Margins">
-        <header>Margins</header>
+      <section class="main-section" id="Margin">
+        <header>Margin</header>
         <article>
           <p>
-            For example, the following code defines a simple function named
-            square:
+            The margin is an invisible space around your box. It pushes other elements away from the box. Margins can have positive or negative values. Setting a negative margin on one side of your box can cause it to overlap other things on the page. Whether you are using the standard or alternative box model, the margin is always added after the size of the visible box has been calculated.
           </p>
           <p>
-            Primitive parameters (such as a number) are passed to functions by
-            value; the value is passed to the function, but if the function
-            changes the value of the parameter, this change is not reflected
-            globally or in the calling function.
+            We can control all margins of an element at once using the margin property, or each side individually using the equivalent longhand properties:
+          </p>
+          <ul>
+            <li>margin-top</li>
+            <li>margin-right</li>
+            <li>margin-bottom</li>
+            <li>margin-left</li>
+          </ul>
+          <p>
+            <strong>Margin collapsing: </strong> A key thing to understand about margins is the concept of margin collapsing. If you have two elements whose margins touch, and both margins are positive, those margins will combine to become one margin, which is the size of the largest individual margin. If one or both margins are negative, the amount of negative value will subtract from the total.
           </p>
         </article>
       </section>
