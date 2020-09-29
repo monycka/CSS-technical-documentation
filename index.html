@@ -16,19 +16,27 @@
             >What you should already know</a
           >
         </li>
-        <li><a class="nav-link" href="#Adding_CSS_to_our_document">Adding CSS to our document</a></li>
+        <li>
+          <a class="nav-link" href="#Adding_CSS_to_the_document"
+            >Adding CSS to the document</a
+          >
+        </li>
         <li>
           <a class="nav-link" href="#Anatomy_of_a_CSS_ruleset"
             >Anatomy of a CSS ruleset</a
           >
         </li>
-        <li><a class="nav-link" href="#Parts_of_the_syntax">Part of the Syntax</a></li>
         <li>
-          <a class="nav-link" href="#Declaring_variables"
-            >Declaring variables</a
+          <a class="nav-link" href="#Parts_of_the_syntax">Part of the Syntax</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Multiple_selectors">Multiple selectors</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Multiple_declarations"
+            >Multiple declarations</a
           >
         </li>
-        <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
         <li>
           <a class="nav-link" href="#Global_variables">Global variables</a>
         </li>
@@ -62,11 +70,10 @@
             HTML.
           </p>
           <p>
-            CSS is a stylesheet language used to
-            describe the presentation of a document written in HTML or XML
-            (including XML dialects such as SVG, MathML or XHTML). CSS describes
-            how elements should be rendered on screen, on paper, in speech, or
-            on other media.
+            CSS is a stylesheet language used to describe the presentation of a
+            document written in HTML or XML (including XML dialects such as SVG,
+            MathML or XHTML). CSS describes how elements should be rendered on
+            screen, on paper, in speech, or on other media.
           </p>
           <p>
             CSS is a rule-based language — you define rules specifying groups of
@@ -86,44 +93,51 @@
               (WWW).
             </li>
             <li>Good working knowledge of HyperText Markup Language (HTML).</li>
-            <li>
-              Some programming experience.
-            </li>
+            <li>Some programming experience.</li>
           </ul>
         </article>
       </section>
-      <section class="main-section" id="Adding_CSS_to_our_document">
-        <header>Adding CSS to our document</header>
+      <section class="main-section" id="Adding_CSS_to_the_document">
+        <header>Adding CSS to the document</header>
         <article>
           <p>
-            The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.
+            The very first thing we need to do is to tell the HTML document that
+            we have some CSS rules we want it to use. There are three different
+            ways to apply CSS to an HTML document that you'll commonly come
+            across, however, for now, we will look at the most usual and useful
+            way of doing so — linking CSS from the head of your document.
           </p>
           <p>
-            Create a file in the same folder as your HTML document and save it as styles.css. The .css extension shows that this is a CSS file.
+            Create a file in the same folder as your HTML document and save it
+            as styles.css. The .css extension shows that this is a CSS file.
           </p>
           <p>
-            To link styles.css to index.html add the following line somewhere inside the "head" of the HTML document:
+            To link styles.css to index.html add the following line somewhere
+            inside the "head" of the HTML document:
             <br />
-            <strong> < link rel="stylesheet" href="styles.css" > </strong>
+            <strong id="style">
+              < link rel="stylesheet" href="styles.css" >
+            </strong>
+          </p>
+          <p>
+            This "link" element tells the browser that we have a stylesheet,
+            using the rel attribute, and the location of that stylesheet as the
+            value of the href attribute. You can test that the CSS works by
+            adding a rule to styles.css.
           </p>
         </article>
       </section>
-
-
-
-
-
       <section class="main-section" id="Anatomy_of_a_CSS_ruleset">
         <header>Anatomy of a CSS ruleset</header>
         <article>
           <div id="img-div">
             <img
-              src="https://mdn.mozillademos.org/files/9461/css-declaration-small.png"
-              alt="CSS code for red paragraph text"
+              src="https://cssworkshop.files.wordpress.com/2015/03/css-declaration.png"
+              alt="Anatomy of a CSS Declaration Block"
               id="image"
             />
             <figcaption id="img-caption">
-              The CSS code for red paragraph text.
+              Anatomy of a CSS Declaration Block.
             </figcaption>
           </div>
           <p>
@@ -133,16 +147,86 @@
 
           <ul>
             <li>
-              <strong>Selector:</strong>
-              This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this example, "p" elements). To style a different element, change the selector.
+              <strong>Selector: </strong>This is the HTML element that we’re
+              targeting. It can be an HTML tag, or it can be an ID or a Class
+              (more about those later). The selector in this example is the
+              anchor tag.
             </li>
-            <li><strong>Declaration:</strong>This is a single rule like color: red;. It specifies which of the element's properties you want to style.</li>
-            <li><strong>Properties:</strong>These are ways in which you can style an HTML element. (In this example, color is a property of the "p" elements.) In CSS, you choose which properties you want to affect in the rule.</li>
             <li>
-              <strong>Property value:</strong>To the right of the property—after the colon—there is the property value. This chooses one out of many possible appearances for a given property. (For example, there are many color values in addition to red.)</li>
+              <strong>Declaration block start: </strong>An open curly brace "{"
+              marks the start of a declaration block.
+            </li>
+            <li>
+              <strong>Property / Value separator: </strong>The colon : appears
+              after the property.
+            </li>
+            <li>
+              <strong>Value: </strong>This is the value of the property. In this
+              example, it’s white.
+            </li>
+            <li>
+              <strong>Declaration: </strong>The property/value pair combined is
+              the declaration, indicated by the orange box in the above diagram.
+            </li>
+            <li>
+              <strong>Declaration separator: </strong>The semicolon ; marks the
+              end of the declaration.
+            </li>
+            <li>
+              <strong>Declaration block end: </strong>A closing curly brace "}"
+              marks the end of a declaration block.
+            </li>
           </ul>
         </article>
       </section>
+      <section class="main-section" id="Parts_of_the_syntax">
+        <header>Parts of the syntax</header>
+        <ul>
+          <li>
+            Apart from the selector, each ruleset must be wrapped in curly
+            braces ({ }).
+          </li>
+          <li>
+            Within each declaration, you must use a colon (:) to separate the
+            property from its value or values.
+          </li>
+          <li>
+            Within each ruleset, you must use a semicolon (;) to separate each
+            declaration from the next one.
+          </li>
+          <li>
+            To modify multiple property values in one ruleset, write them
+            separated by semicolons (;).
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Multiple_selectors">
+        <header>Multiple selectors</header>
+        <article>
+          <p>
+            By making our heading red we have already demonstrated that we can
+            target and style an HTML element. We do this by targeting an element
+            selector — this is a selector that directly matches an HTML element
+            name. To target all paragraphs in the document you would use the
+            selector "p".
+          </p>
+
+          <p>
+            You can target multiple selectors at once, by separating the
+            selectors with a comma.
+          </p>
+          <div id="img-div">
+            <img
+              src="https://cssworkshop.files.wordpress.com/2015/03/css-declarations-rev1.png"
+              alt="Declaration blocks with multiple declarations (top) and multiple selectors / declarations (bottom)."
+              id="image"
+            />
+            <figcaption id="img-caption">Declaration blocks with multiple declarations (top) and multiple selectors / declarations (bottom).</figcaption>
+          </div>
+        </article>
+      </section>
+
       <section class="main-section" id="Hello_world">
         <header>Hello world</header>
         <article>
@@ -157,25 +241,9 @@
           browser!
         </article>
       </section>
-      <section class="main-section" id="Parts_of_the_syntax">
-        <header>Parts of the syntax</header>
-        <ul>
-          <li>
-            Apart from the selector, each ruleset must be wrapped in curly braces ({ }).
-          </li>
-          <li>
-            Within each declaration, you must use a colon (:) to separate the property from its value or values.
-          </li>
-          <li>
-           Within each ruleset, you must use a semicolon (;) to separate each declaration from the next one. 
-          </li>
-          <li>
-            To modify multiple property values in one ruleset, write them separated by semicolons (;).
-          </li>
-        </ul>
-      </section>
-      <section class="main-section" id="Declaring_variables">
-        <header>Declaring variables</header>
+
+      <section class="main-section" id="Multiple_declarations">
+        <header>Multiple declarations</header>
         <article>
           You can declare a variable in three ways:
           <p>
@@ -193,37 +261,6 @@
             syntax can be used to declare a block scope local variable. See
             Variable scope below.
           </p>
-        </article>
-      </section>
-      <section class="main-section" id="Variable_scope">
-        <header>Variable scope</header>
-        <article>
-          <p>
-            When you declare a variable outside of any function, it is called a
-            global variable, because it is available to any other code in the
-            current document. When you declare a variable within a function, it
-            is called a local variable, because it is available only within that
-            function.
-          </p>
-
-          <p>
-            JavaScript before ECMAScript 2015 does not have block statement
-            scope; rather, a variable declared within a block is local to the
-            function (or global scope) that the block resides within. For
-            example the following code will log 5, because the scope of x is the
-            function (or global context) within which x is declared, not the
-            block, which in this case is an if statement.
-          </p>
-          <code>if (true) { var x = 5; } console.log(x); // 5</code>
-          <p>
-            This behavior changes, when using the let declaration introduced in
-            ECMAScript 2015.
-          </p>
-
-          <code
-            >if (true) { let y = 5; } console.log(y); // ReferenceError: y is
-            not defined</code
-          >
         </article>
       </section>
       <section class="main-section" id="Global_variables">
